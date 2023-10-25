@@ -4,12 +4,34 @@ function1(){
     echo "Ingrese nombre del dueño"
     read nomOwner
 
-    echo "Ingrese cedula"
-    read ciOwner
+    ciOwner=0
+    while ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]] || grep -q "$ciOwner" socios.txt
+    do
+        echo "Ingrese cedula sin puntos ni guiones"
+        read ciOwner
+        if ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]]
+        then
+            echo "Ingrese una cédula válida"
+        fi
+        if grep -q "$ciOwner" socios.txt
+        then
+            echo "Usuario ya fue ingresado"
+        fi
+    done
 
-    echo "Cantidad de mascotas a ingresar"
-    read cantMascotas
+    cantMascotas=0
+    while ! [[ "$cantMascotas" =~ ^[0-9]+$ ]] || [ "$cantMascotas" -lt 1 ] || [ "$cantMascotas" -gt 4 ]
+    do
+        echo "Cantidad de mascotas a ingresar"
+        read cantMascotas
+        if ! [[ "$cantMascotas" =~ ^[0-9]+$ ]] || [ "$cantMascotas" -lt 1 ] || [ "$cantMascotas" -gt 4 ]
+        then
+            echo "La cantidad de mascotas debe ser un entero entre 1 y 4"
+        fi
+    done
 
+    nombresMascotas=()
+    edadesMascotas=()
     for ((i=0; i<$cantMascotas; i++))
     do  
         echo "Ingrese nombre de mascota"
@@ -17,18 +39,25 @@ function1(){
         echo "Ingrese edad de la mascota"
         read edadMascota
 
-        nombresMascotas[$i]=nomMascotas
-        edadesMascotas[$i]=edadMascota
-        echo "${nombreMascotas[$i]}"
-        echo "${edadesMascotas[$i]}"
+        nombresMascotas[$i]=$nomMascotas
+        edadesMascotas[$i]=$edadMascota
     done
+
+    echo "Ingrese opción de contacto"
+    read contacto
+
+    registro=$nomOwner","$ciOwner
+    for ((i=0; i<4; i++))
+    do  
+        registro=$registro","${nombresMascotas[$i]}","${edadesMascotas[$i]}
+    done
+    registro=$registro","$contacto
+
+    echo $registro >> socios.txt
 
 }
 
-
-
 exit=0
-
 while [ $exit -ne -1 ] 
 do
     echo "Seleccione una opcion"
