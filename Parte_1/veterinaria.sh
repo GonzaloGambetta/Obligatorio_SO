@@ -4,18 +4,28 @@ function1(){
     echo "Ingrese nombre del dueño"
     read nomOwner
 
-    ciOwner=0
-    while ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]] || grep -q "$ciOwner" socios.txt
+    echo "Ingrese cedula sin puntos ni guiones"
+    read ciOwner
+
+    aux=0
+    #while ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]] || grep -q "$ciOwner" socios.txt
+    while [ "$aux" -eq 0 ]
     do
-        echo "Ingrese cedula sin puntos ni guiones"
-        read ciOwner
+        ciSocios=$(cut -d',' -f 2 socios.txt)
         if ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]]
         then
             echo "Ingrese una cédula válida"
-        fi
-        if grep -q "$ciOwner" socios.txt
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+        elif grep -q -w "$ciOwner" "$ciSocios"
+
         then
             echo "Usuario ya fue ingresado"
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+
+        else
+            aux=1
         fi
     done
 
@@ -95,3 +105,4 @@ do
             ;;
     esac
 done
+
