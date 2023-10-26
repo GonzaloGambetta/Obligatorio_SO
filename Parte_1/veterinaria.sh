@@ -1,6 +1,10 @@
 #!/bin/bash
 
-function1(){
+nombresMascotas=()
+edadesMascotas=()
+numSocio=0
+
+registroSocio(){
     echo "Ingrese nombre del dueño"
     read nomOwner
 
@@ -30,8 +34,6 @@ function1(){
         fi
     done
 
-    nombresMascotas=()
-    edadesMascotas=()
     for ((i=0; i<$cantMascotas; i++))
     do  
         echo "Ingrese nombre de mascota"
@@ -39,22 +41,23 @@ function1(){
         echo "Ingrese edad de la mascota"
         read edadMascota
 
-        nombresMascotas[$i]=$nomMascotas
-        edadesMascotas[$i]=$edadMascota
+        if [ $i -eq 0 ]
+        then
+            nombresMascotas[numSocio]=$nomMascotas
+            edadesMascotas[numSocio]=$edadMascota
+        else
+            nombresMascotas[numSocio]=${nombresMascotas[numSocio]}","$nomMascotas
+            edadesMascotas[numSocio]=${edadesMascotas[numSocio]}","$edadMascota
+        fi
     done
 
     echo "Ingrese opción de contacto"
     read contacto
 
-    registro=$nomOwner","$ciOwner
-    for ((i=0; i<4; i++))
-    do  
-        registro=$registro","${nombresMascotas[$i]}","${edadesMascotas[$i]}
-    done
-    registro=$registro","$contacto
-
+    registro=$nomOwner","$ciOwner","${nombresMascotas[numSocio]}","${edadesMascotas[numSocio]}","$contacto
     echo $registro >> socios.txt
 
+    numSocio=$numSocio + 1
 }
 
 exit=0
@@ -72,10 +75,11 @@ do
     case $opcion in 
         1)
             echo "Registro de socio"
-            function1
+            registroSocio
             ;;
         2)
             echo "Manejo de citas"
+            manejoCitas
             ;;
         3) 
             echo "Actualizar stock en tienda"            
