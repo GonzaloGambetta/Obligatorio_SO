@@ -8,18 +8,17 @@ function1(){
     read ciOwner
 
     aux=0
-    #while ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]] || grep -q "$ciOwner" socios.txt
     while [ "$aux" -eq 0 ]
     do
         ciSocios=$(cut -d',' -f 2 socios.txt)
-        echo "$ciSocios"
+        grep -q -w "$ciOwner" <<< "$(printf "%s\n" "${ciSocios[@]}")"
+        existe=$?
         if ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]]
         then
             echo "Ingrese una cédula válida"
             echo "Ingrese cedula sin puntos ni guiones"
             read ciOwner
-        elif grep -q -w "$ciOwner" "$ciSocios"
-
+        elif [ "$existe" -eq 0 ]
         then
             echo "Usuario ya fue ingresado"
             echo "Ingrese cedula sin puntos ni guiones"
