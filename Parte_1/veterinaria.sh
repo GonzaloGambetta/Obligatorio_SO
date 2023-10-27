@@ -12,6 +12,7 @@ function1(){
     while [ "$aux" -eq 0 ]
     do
         ciSocios=$(cut -d',' -f 2 socios.txt)
+        echo "$ciSocios"
         if ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]]
         then
             echo "Ingrese una cédula válida"
