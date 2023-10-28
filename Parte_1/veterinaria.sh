@@ -47,9 +47,20 @@ registroSocio(){
     for ((i=0; i<$cantMascotas; i++))
     do  
         echo "Ingrese nombre de mascota"
-        read nomMascotas
+        read nomMascota
+        while [ -z "${nomMascota}" ] || [[ "$nomMascota" =~ [^a-zA-Z] ]]
+        do
+            echo "Ingrese un nombre válido"
+            read nomMascota
+        done
+
         echo "Ingrese edad de la mascota"
         read edadMascota
+        while ! [[ "$edadMascota" =~ ^[0-9]+$ ]] || [ "$edadMascota" -lt 0 ] || [ "$edadMascota" -gt 100 ]
+        do
+            echo "Ingrese una edad de mascota válida (entre 0 y 100)"
+            read edadMascota
+        done
 
         if [ $i -eq 0 ]
         then
@@ -70,10 +81,65 @@ registroSocio(){
     numSocio=$numSocio + 1
 }
 
+agendarCita(){
+    echo "Ingrese cedula sin puntos ni guiones"
+    read ciOwner
+    aux=0
+    while [ "$aux" -eq 0 ]
+    do
+        ciSocios=$(cut -d',' -f 2 socios.txt)
+        grep -q -w "$ciOwner" <<< "$(printf "%s\n" "${ciSocios[@]}")"
+        existe=$?
+        if ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]]
+        then
+            echo "Ingrese una cédula válida"
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+        elif ! [ "$existe" -eq 0 ]
+        then
+            echo "Usuario no existe"
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+
+        else
+            aux=1
+        fi
+    done
+
+    echo "Ingrese nombre de mascota"
+    read nomMascota
+    while [ -z "${nomMascota}" ] || [[ "$nomMascota" =~ [^a-zA-Z] ]]
+    do
+        echo "Ingrese un nombre válido"
+        read nomMascota
+    done
+    
+}
+
+manejoCitas(){
+    exit2=0
+    while [ $exit2 -ne -1 ]
+    do
+        echo "Seleccione una opción"
+        echo "1. Agendar una nueva cita"
+        echo "2. Consultar citas pendientes"
+        echo "3. Eliminar una cita programada"
+        echo "4. Salir"
+        read opcion2
+
+        case $opcion2 in
+            1) 
+                echo "Agendar una nueva cita"
+                agendarCita
+                ;;
+        esac
+    done
+}
+
 exit=0
 while [ $exit -ne -1 ] 
 do
-    echo "Seleccione una opcion"
+    echo "Seleccione una opción"
     echo "1. Registro de socio"
     echo "2. Manejo de citas"
     echo "3. Actualizar stock en tienda"
