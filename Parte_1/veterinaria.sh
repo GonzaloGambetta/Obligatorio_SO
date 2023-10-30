@@ -204,7 +204,37 @@ consultarCitas(){
 }
 
 eliminarCita(){
-    
+    echo "Ingrese cedula sin puntos ni guiones"
+    read ciOwner
+    aux=0
+    while [ "$aux" -eq 0 ]
+    do
+        ciSocios=$(cut -d',' -f 2 socios.txt)
+        grep -q -w "$ciOwner" <<< "$(printf "%s\n" "${ciSocios[@]}")"
+        existe=$?
+        if ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]]
+        then
+            echo "Ingrese una cédula válida"
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+        elif ! [ "$existe" -eq 0 ]
+        then
+            echo "Usuario no existe"
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+
+        else
+            aux=1
+        fi
+    done
+
+    if grep -qw "$ciOwner" citas.txt
+    then
+        grep "$ciOwner" citas.txt
+        echo "Ingrese horario de cita a eliminar"
+    else
+        echo "El usuario no tiene citas pendientes"
+    fi
 }
 
 manejoCitas(){
