@@ -64,10 +64,10 @@ registroSocio(){
 
         if [ $i -eq 0 ]
         then
-            nombresMascotas[numSocio]=$nomMascotas
+            nombresMascotas[numSocio]=$nomMascota
             edadesMascotas[numSocio]=$edadMascota
         else
-            nombresMascotas[numSocio]=${nombresMascotas[numSocio]}","$nomMascotas
+            nombresMascotas[numSocio]=${nombresMascotas[numSocio]}","$nomMascota
             edadesMascotas[numSocio]=${edadesMascotas[numSocio]}","$edadMascota
         fi
     done
@@ -78,7 +78,7 @@ registroSocio(){
     registro=$nomOwner","$ciOwner","${nombresMascotas[numSocio]}","${edadesMascotas[numSocio]}","$contacto
     echo $registro >> socios.txt
 
-    numSocio=$numSocio + 1
+    numSocio=$numSocio+1
 }
 
 agendarCita(){
@@ -108,11 +108,102 @@ agendarCita(){
 
     echo "Ingrese nombre de mascota"
     read nomMascota
-    while [ -z "${nomMascota}" ] || [[ "$nomMascota" =~ [^a-zA-Z] ]]
+    aux=0
+    while [ "$aux" -eq 0 ]
     do
-        echo "Ingrese un nombre válido"
-        read nomMascota
+        if [ -z "${nomMascota}" ] || [[ "$nomMascota" =~ [^a-zA-Z] ]]
+        then
+            echo "Ingrese un nombre válido"
+            read nomMascota
+        elif ! grep -qw "$ciOwner.*$nomMascota" socios.txt 
+        then
+            echo "El usuario ingresado no es duena de la mascota"
+            read nomMascota
+        else
+            aux=1
+        fi
     done
+
+    exit3=0
+    while [ $exit3 -ne -1 ]
+    do
+        echo "Seleccione el motivo de la cita"
+        echo "1. Revisión general"
+        echo "2. Vacunación"
+        read opcion3
+
+        case $opcion3 in
+            1) 
+                motivo="revision,1200"
+                exit3=-1
+                ;;
+            2)
+                motivo="vacunacion,2000"
+                exit3=-1
+                ;;
+            *)
+                echo "Seleccione una de las opciones presentadas"
+                ;;
+        esac
+    done
+
+    echo "Ingrese fecha y hora de la cita en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
+    read fechaHora
+     aux=0
+    while [ "$aux" -eq 0 ]
+    do
+        if ! [[ $fechaHora =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$ ]]; 
+        then
+            echo "La fecha y hora de la cita no es válida. Por favor, ingrese la fecha y hora en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
+            read fechaHora
+        elif grep -qw "$ciOwner.*$fechaHora" citas.txt
+        then
+            echo "Ya tiene una cita agendada para ese horario, ingrese uno diferente"
+            read fechaHora
+        else
+            aux=1
+        fi
+    done
+    
+    registro=$ciOwner","$nomMascota","$motivo","$fechaHora
+    echo $registro >> citas.txt
+}
+
+consultarCitas(){
+    echo "Ingrese cedula sin puntos ni guiones"
+    read ciOwner
+    aux=0
+    while [ "$aux" -eq 0 ]
+    do
+        ciSocios=$(cut -d',' -f 2 socios.txt)
+        grep -q -w "$ciOwner" <<< "$(printf "%s\n" "${ciSocios[@]}")"
+        existe=$?
+        if ! [[ "$ciOwner" =~ ^[1-6000000]+$ ]]
+        then
+            echo "Ingrese una cédula válida"
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+        elif ! [ "$existe" -eq 0 ]
+        then
+            echo "Usuario no existe"
+            echo "Ingrese cedula sin puntos ni guiones"
+            read ciOwner
+
+        else
+            aux=1
+        fi
+    done
+
+    if grep -qw "$ciOwner" citas.txt
+    then
+        grep "$ciOwner" citas.txt
+    else
+        echo "El usuario no tiene citas pendientes"
+    fi
+
+}
+
+eliminarCita(){
     
 }
 
@@ -131,6 +222,21 @@ manejoCitas(){
             1) 
                 echo "Agendar una nueva cita"
                 agendarCita
+                ;;
+            2)
+                echo "Consultar citas pendientes"
+                consultarCitas
+                ;;
+            3)
+                echo "Eliminar una cita programada"
+                eliminarCita
+                ;;
+            4)
+                echo "Salir"
+                exit2=-1
+                ;;
+            *)
+                echo "Seleccione una de las opciones presentadas"
                 ;;
         esac
     done
