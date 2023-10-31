@@ -1,2 +1,0 @@
-1234,Chicle,revision,1200,2018-12-30T12:30
-1234,Chicle,vacunacion,2000,2018-12-30T12:31

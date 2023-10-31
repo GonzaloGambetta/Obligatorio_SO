@@ -1,9 +1,5 @@
 #!/bin/bash
 
-nombresMascotas=()
-edadesMascotas=()
-numSocio=0
-
 registroSocio(){
     echo "Ingrese nombre del dueño"
     read nomOwner
@@ -44,6 +40,8 @@ registroSocio(){
         fi
     done
 
+    nombresEdades=""
+
     for ((i=0; i<$cantMascotas; i++))
     do  
         echo "Ingrese nombre de mascota"
@@ -64,18 +62,16 @@ registroSocio(){
 
         if [ $i -eq 0 ]
         then
-            nombresMascotas[numSocio]=$nomMascota
-            edadesMascotas[numSocio]=$edadMascota
+            nombresEdades=$nomMascota","$edadMascota
         else
-            nombresMascotas[numSocio]=${nombresMascotas[numSocio]}","$nomMascota
-            edadesMascotas[numSocio]=${edadesMascotas[numSocio]}","$edadMascota
+            nombresEdades=$nombresEdades","$nomMascota","$edadMascota
         fi
     done
 
     echo "Ingrese opción de contacto"
     read contacto
 
-    registro=$nomOwner","$ciOwner","${nombresMascotas[numSocio]}","${edadesMascotas[numSocio]}","$contacto
+    registro=$nomOwner","$ciOwner","$nombresEdades","$contacto
     echo $registro >> socios.txt
 
     numSocio=$numSocio+1
@@ -149,16 +145,16 @@ agendarCita(){
 
     echo "Ingrese fecha y hora de la cita en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
     read fechaHora
-     aux=0
+    aux=0
     while [ "$aux" -eq 0 ]
     do
-        if ! [[ $fechaHora =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$ ]]; #preguntar esto
+        if ! [[ $fechaHora =~ ^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]$ ]];
         then
             echo "La fecha y hora de la cita no es válida. Por favor, ingrese la fecha y hora en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
             read fechaHora
         elif grep -qw "$ciOwner.*$fechaHora" citas.txt
         then
-            echo "Ya tiene una cita agendada para ese horario, ingrese uno diferente"
+            echo "Ya tiene una cita agendada para ese horario, ingrese uno diferente en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
             read fechaHora
         else
             aux=1
@@ -231,7 +227,24 @@ eliminarCita(){
     if grep -qw "$ciOwner" citas.txt
     then
         grep "$ciOwner" citas.txt
-        echo "Ingrese horario de cita a eliminar"
+        echo "Ingrese fecha y hora de la cita a eliminar en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
+        read fechaHora
+        aux=0
+        while [ "$aux" -eq 0 ]
+        do
+            if ! [[ $fechaHora =~ ^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]$ ]];
+            then
+                echo "La fecha y hora de la cita no es válida. Por favor, ingrese la fecha y hora en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
+                read fechaHora
+            elif grep -qw "$ciOwner.*$fechaHora" citas.txt
+            then
+                sed -i "/$ciOwner.*$fechaHora/d" citas.txt
+                aux=1
+            else
+                echo "El usuario no tiene una cita en esa fecha, ingrese una válida"
+                read fechaHora
+            fi
+        done
     else
         echo "El usuario no tiene citas pendientes"
     fi
@@ -272,6 +285,74 @@ manejoCitas(){
     done
 }
 
+actualizarStock(){
+
+    exit4=0
+    while [ $exit4 -ne -1 ]
+    do
+        echo "Seleccione categoría del artículo"
+        echo "1. Comida"
+        echo "2. Juguete"
+        echo "3. Medicamento"
+        read opcion4
+
+        case $opcion4 in
+            1) 
+                categoria="Comida"
+                exit4=-1
+                ;;
+            2)
+                categoria="Juguete"
+                exit4=-1
+                ;;
+            3)
+                categoria="Medicamento"
+                exit4=-1
+                ;;
+            *)
+                echo "Seleccione una de las opciones presentadas"
+                ;;
+        esac
+    done
+
+    echo "Ingrese código del artículo"
+    read codigo
+
+    if ! grep -qw "$codigo" articulos.txt
+    then
+        echo "Ingrese nombre del artículo"
+        read nombre
+
+        echo "Ingrese precio"
+        read precio
+        while ! [[ "$precio" =~ ^[0-9]+(\.[0-9]+)?$ ]];
+        do
+            echo "Ingrese un precio válido"
+            read precio
+        done
+
+        echo "Ingrese cantidad"
+        read cantidad
+        while ! [[ "$cantidad" =~ ^[0-9]+(\.[0-9]+)?$ ]];
+        do
+            echo "Ingrese una cantidad válida"
+            read cantidad
+        done
+
+        articulo=$categoria","$codigo","$nombre","$precio","$cantidad
+        echo $articulo >> articulos.txt
+
+    else
+        echo "El artículo ya fue ingresado, ingrese cantidad"
+        while ! [[ "$cantidad" =~ ^[0-9]+(\.[0-9]+)?$ ]];
+        do
+            echo "Ingrese una cantidad válida"
+            read cantidad
+        done
+
+    fi
+}
+
 exit=0
 while [ $exit -ne -1 ] 
 do
@@ -294,7 +375,8 @@ do
             manejoCitas
             ;;
         3) 
-            echo "Actualizar stock en tienda"            
+            echo "Actualizar stock en tienda"    
+            actualizarStock        
             ;;
         4)
             echo "Venta de productos"            
