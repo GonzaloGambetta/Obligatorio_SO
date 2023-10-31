@@ -152,7 +152,7 @@ agendarCita(){
      aux=0
     while [ "$aux" -eq 0 ]
     do
-        if ! [[ $fechaHora =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$ ]]; 
+        if ! [[ $fechaHora =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}$ ]]; #preguntar esto
         then
             echo "La fecha y hora de la cita no es válida. Por favor, ingrese la fecha y hora en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
             read fechaHora
