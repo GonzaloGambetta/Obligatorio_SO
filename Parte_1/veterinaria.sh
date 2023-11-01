@@ -298,11 +298,11 @@ actualizarStock(){
 
         case $opcion4 in
             1) 
-                categoria="Comida"
+                categoria="Suplementos"
                 exit4=-1
                 ;;
             2)
-                categoria="Juguete"
+                categoria="Accesorios"
                 exit4=-1
                 ;;
             3)
@@ -318,38 +318,37 @@ actualizarStock(){
     echo "Ingrese código del artículo"
     read codigo
 
+    echo "Ingrese nombre del artículo"
+    read nombre
+
+    echo "Ingrese precio"
+    read precio
+    while ! [[ "$precio" =~ ^[0-9]+(\.[0-9]+)?$ ]];
+    do
+        echo "Ingrese un precio válido"
+        read precio
+    done
+
+    echo "Ingrese cantidad"
+    read cantidad
+    while ! [[ "$cantidad" =~ ^[0-9]+(\.[0-9]+)?$ ]];
+    do
+        echo "Ingrese una cantidad válida"
+        read cantidad
+    done
+
     if ! grep -qw "$codigo" articulos.txt
     then
-        echo "Ingrese nombre del artículo"
-        read nombre
-
-        echo "Ingrese precio"
-        read precio
-        while ! [[ "$precio" =~ ^[0-9]+(\.[0-9]+)?$ ]];
-        do
-            echo "Ingrese un precio válido"
-            read precio
-        done
-
-        echo "Ingrese cantidad"
-        read cantidad
-        while ! [[ "$cantidad" =~ ^[0-9]+(\.[0-9]+)?$ ]];
-        do
-            echo "Ingrese una cantidad válida"
-            read cantidad
-        done
-
         articulo=$categoria","$codigo","$nombre","$precio","$cantidad
         echo $articulo >> articulos.txt
-
     else
-        echo "El artículo ya fue ingresado, ingrese cantidad"
-        while ! [[ "$cantidad" =~ ^[0-9]+(\.[0-9]+)?$ ]];
-        do
-            echo "Ingrese una cantidad válida"
-            read cantidad
-        done
-
+        lineaCod=$(grep "$codigo" articulos.txt)
+        cantAnterior=$(echo $lineaCod | cut -d',' -f5)
+        sed -i "/$codigo/d" articulos.txt
+        cantidad=$((cantidad + cantAnterior))
+        
+        articulo=$categoria","$codigo","$nombre","$precio","$cantidad
+        echo $articulo >> articulos.txt
     fi
 }
 
