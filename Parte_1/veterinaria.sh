@@ -352,6 +352,10 @@ actualizarStock(){
     fi
 }
 
+ventaProductos() {
+    
+}
+
 exit=0
 while [ $exit -ne -1 ] 
 do
@@ -378,7 +382,8 @@ do
             actualizarStock        
             ;;
         4)
-            echo "Venta de productos"            
+            echo "Venta de productos"  
+            ventaProductos          
             ;;
         5) 
             echo "Informe sensual"           
