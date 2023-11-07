@@ -336,6 +336,7 @@ actualizarStock(){
         echo "Ingrese una cantidad válida"
         read cantidad
     done
+    
 
     if ! grep -qw "$codigo" articulos.txt
     then
@@ -353,6 +354,74 @@ actualizarStock(){
 }
 
 ventaProductos() {
+   exit5=0
+    while [ $exit5 -ne -1 ]
+    do
+        echo "Seleccione la categoría del producto"
+        echo "1. Medicamentos"
+        echo "2. Suplementos"
+        echo "3. Accesorios"
+        read categoria
+
+        case $categoria in
+            1) 
+                categoria="Medicamento"
+                exit5=-1
+                ;;
+            2) categoria="Suplementos"
+                exit5=-1
+                ;;
+            3) categoria="Accesorios"
+                exit5=-1
+                ;;
+            
+            *) echo "Seleccione una de las categorias presentadas"
+                ;;
+        esac
+    done
+
+    exit6=0
+    while [ $exit6 -ne -1 ] 
+    do    
+        echo "Ingrese el código del producto"
+        read codigo
+
+        lineaProducto=$(grep -w "$codigo" articulos.txt)
+        if [ -z "$lineaProducto" ]; then
+            echo "El producto no existe."
+            continue
+        fi
+        categoriaProducto=$(echo $lineaProducto | cut -d',' -f1)
+        if [ "$categoriaProducto" != "$categoria" ]; then
+            echo "El producto no pertenece a la categoría seleccionada."
+            continue
+        fi
+        exit6=-1
+    done
+        
+    echo "Ingrese cantidad a comprar del producto"
+    read cantidad
+
+    cantidadDisponible=$(echo $lineaProducto | cut -d',' -f5)
+
+    if [ $cantidad -gt $cantidadDisponible ]; then
+        echo "No hay suficiente stock del producto."        
+        echo "Cantidad disponible: $cantidadDisponible"
+        read cantidad
+    fi
+
+    cantidadNueva=$((cantidadDisponible - cantidad))
+    lineaProducto2=$(grep -n -w -m 1 "$codigo" articulos.txt | cut -f1 -d:)
+    if [ -n "$lineaProducto2" ]; then
+        sed -i "${lineaProducto2}d" articulos.txt
+    fi
+    echo $lineaProducto
+    echo "${categoriaProducto},${codigo},$(echo $lineaProducto | cut -d',' -f3-4),$cantidadNueva" >> articulos.txt
+
+
+
+
+    
     
 }
 
