@@ -416,13 +416,25 @@ ventaProductos() {
         sed -i "${lineaProducto2}d" articulos.txt
     fi
     echo $lineaProducto
-    echo "${categoriaProducto},${codigo},$(echo $lineaProducto | cut -d',' -f3-4),$cantidadNueva" >> articulos.txt
+    echo "${categoriaProducto},${codigo},$(echo $lineaProducto | cut -d',' -f3-4),$cantidadNueva" >> articulos.txt   
+}
 
+informeMensual() {
+    mes=""
+    while [[ ! $mes =~ ^(0[1-9]|1[0-2])$ ]];
+    do
+        echo "Ingrese un mes (01-12)"
+        read mes
+    done
 
+    lineas=$(awk -F'-' -v mes="$mes" '$2 ~ mes' citas.txt)    
+    if [ -z "$lineas" ]; then
+        echo "No hay citas para el mes seleccionado."
+        return
+    fi
 
-
-    
-    
+    promedio=$(echo "$lineas" | cut -d',' -f4 | awk '{total += $1; count++} END {print total/count}')
+    echo "El promedio recaudado para el mes $mes es $promedio"
 }
 
 exit=0
@@ -455,7 +467,8 @@ do
             ventaProductos          
             ;;
         5) 
-            echo "Informe sensual"           
+            echo "Informe mensual"    
+            informeMensual       
             ;;
         6)
             echo "Salir"
