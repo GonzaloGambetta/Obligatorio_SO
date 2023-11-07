@@ -1,6 +1,0 @@
-Medicamento,3,Med,350,15
-Medicamento,4,Med1,300,5
-Medicamento,5,Med3,500,20
-Suplementos,1,Comida,1500,1
-Medicamento,31,Med2,500,0
-Accesorios,2,Juego,200,0
