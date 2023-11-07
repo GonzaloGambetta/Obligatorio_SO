@@ -4,28 +4,29 @@
 #include <stdio.h>
 #include <unistd.h>
 
+
 sem_t semBD, semCE, semHG, semDF, semEF, semEG, semFQ, semGQ, semQI, semQJ, semQK, semIL, semIM, semJM, semLN, semMP, semNO, semPO;
 
-void *Proc_A(void *x) {
+void *ProcA(void *x){
     printf("A\n");
 }
 
-void *Proc_B(void *x) {
+void *ProcB(void *x){
     printf("B\n");
     sem_post(&semBD);
 }
 
-void *Proc_C(void *x) {
+void *ProcC(void *x){
     printf("C\n");
     sem_post(&semCE);
 }
 
-void *Proc_H(void *x) {
+void *ProcH(void *x){
     printf("H\n");
     sem_post(&semHG);
 }
 
-void *ProcD(void* x) {
+void *ProcD(void* x){
     sem_wait(&semBD);
     srand(time(NULL));
     sleep(1 + (rand() % 5));
@@ -33,7 +34,7 @@ void *ProcD(void* x) {
     sem_post(&semDF);
 }
 
-void *ProcE(void* x) {
+void *ProcE(void* x){
     sem_wait(&semCE);
     srand(time(NULL));
     sleep(1 + (rand() % 5));
@@ -42,7 +43,7 @@ void *ProcE(void* x) {
     sem_post(&semEG);
 }
 
-void *ProcF(void* x) {
+void *ProcF(void* x){
     sem_wait(&semDF);
     sem_wait(&semEF);
     srand(time(NULL));
@@ -51,7 +52,7 @@ void *ProcF(void* x) {
     sem_post(&semFQ);
 }
 
-void *ProcG(void* x) {
+void *ProcG(void* x){
     sem_wait(&semEG);
     sem_wait(&semHG);
     srand(time(NULL));
@@ -60,7 +61,7 @@ void *ProcG(void* x) {
     sem_post(&semGQ);
 }
 
-void *ProcQ(void* x) {
+void *ProcQ(void* x){
     sem_wait(&semFQ);
     sem_wait(&semGQ);
     srand(time(NULL));
@@ -71,12 +72,12 @@ void *ProcQ(void* x) {
     sem_post(&semQK);
 }
 
-void *ProcK(void* x) {
+void *ProcK(void* x){
     sem_wait(&semQK);
     printf("K\n");
 }
 
-void *ProcJ(void* x) {
+void *ProcJ(void* x){
     sem_wait(&semQJ);
     srand(time(NULL));
     sleep(1 + (rand() % 5));
@@ -84,7 +85,7 @@ void *ProcJ(void* x) {
     sem_post(&semJM);
 }
 
-void *ProcI(void* x) {
+void *ProcI(void* x){
     sem_wait(&semQI);
     srand(time(NULL));
     sleep(1 + (rand() % 5));
@@ -93,7 +94,7 @@ void *ProcI(void* x) {
     sem_post(&semIM);
 }
 
-void *ProcL(void* x) {
+void *ProcL(void* x){
     sem_wait(&semIL);
     srand(time(NULL));
     sleep(1 + (rand() % 5));
@@ -101,7 +102,7 @@ void *ProcL(void* x) {
     sem_post(&semLN);
 }
 
-void *ProcM(void* x) {
+void *ProcM(void* x){
     sem_wait(&semIM);
     sem_wait(&semJM);
     srand(time(NULL));
@@ -110,7 +111,7 @@ void *ProcM(void* x) {
     sem_post(&semMP);
 }
 
-void *ProcN(void* x) {
+void *ProcN(void* x){
     sem_wait(&semLN);
     srand(time(NULL));
     sleep(1 + (rand() % 5));
@@ -118,7 +119,7 @@ void *ProcN(void* x) {
     sem_post(&semNO);
 }
 
-void *ProcP(void* x) {
+void *ProcP(void* x){
     sem_wait(&semMP);
     srand(time(NULL));
     sleep(1 + (rand() % 5));
@@ -126,13 +127,13 @@ void *ProcP(void* x) {
     sem_post(&semPO);
 }
 
-void *ProcO(void* x) {
+void *ProcO(void* x){
     sem_wait(&semNO);
     sem_wait(&semPO);
     printf("O\n");
 }
 
-int main() {
+int main(){
     sem_init(&semBD, 0, 0);
     sem_init(&semCE, 0, 0);
     sem_init(&semDF, 0, 0);
@@ -151,4 +152,46 @@ int main() {
     sem_init(&semMP, 0, 0);
     sem_init(&semNO, 0, 0);
     sem_init(&semPO, 0, 0);
+
+    pthread_t ta, tb, tc, td, te, tf, tg, th, ti, tj, tk, tl, tm, tn, to, tp, tq;
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+
+    pthread_create(&ta, &attr, ProcA, NULL);
+    pthread_create(&tb, &attr, ProcB, NULL);
+    pthread_create(&tc, &attr, ProcC, NULL);
+    pthread_create(&td, &attr, ProcD, NULL);
+    pthread_create(&te, &attr, ProcE, NULL);
+    pthread_create(&tf, &attr, ProcF, NULL);
+    pthread_create(&tg, &attr, ProcG, NULL);
+    pthread_create(&th, &attr, ProcH, NULL);
+    pthread_create(&ti, &attr, ProcI, NULL);
+    pthread_create(&tj, &attr, ProcJ, NULL);
+    pthread_create(&tk, &attr, ProcK, NULL);
+    pthread_create(&tl, &attr, ProcL, NULL);
+    pthread_create(&tm, &attr, ProcM, NULL);
+    pthread_create(&tn, &attr, ProcN, NULL);
+    pthread_create(&to, &attr, ProcO, NULL);
+    pthread_create(&tp, &attr, ProcP, NULL);
+    pthread_create(&tq, &attr, ProcQ, NULL);
+
+    pthread_join(ta, NULL);
+    pthread_join(tb, NULL);
+    pthread_join(tc, NULL);
+    pthread_join(td, NULL);
+    pthread_join(te, NULL);
+    pthread_join(tf, NULL);
+    pthread_join(tg, NULL);
+    pthread_join(th, NULL);
+    pthread_join(ti, NULL);
+    pthread_join(tj, NULL);
+    pthread_join(tk, NULL);
+    pthread_join(tl, NULL);
+    pthread_join(tm, NULL);
+    pthread_join(tn, NULL);
+    pthread_join(to, NULL);
+    pthread_join(tp, NULL);
+    pthread_join(tq, NULL);
+
+    return 0;
 }
