@@ -23,7 +23,7 @@ procedure ascensores is
 
    type listaPedidos is array (Integer range <>) of pedido;
    Pedidos : listaPedidos(1 .. Cant_pedidos);
-
+   
    procedure llenarPedidos is
       pedidoAux : pedido;
    begin
@@ -37,6 +37,26 @@ procedure ascensores is
       end;
    end loop;
    end llenarPedidos;
+   
+   type asc is record 
+      disponible : Boolean;
+      piso_actual : Integer;
+   end record;
+      
+   type listaAsc is array (Integer range <>) of asc;
+   Ascensores : listaAsc(1 .. Cant_ascensores);
+
+   procedure llenarAsc is
+      ascAux : asc;
+   begin
+   for I in 1 .. Cant_ascensores loop
+      begin
+         ascAux.disponible := True;
+         ascAux.piso_actual := 1;
+         Ascensores(I) := ascAux;	
+      end;
+   end loop;
+   end llenarAsc;
 
    package counter is
       function get_next return integer;
@@ -56,50 +76,78 @@ procedure ascensores is
    task type ascensor (numero: integer:= 1+(counter.get_next mod Cant_ascensores)) is
       Entry pedir (desde : Integer; hasta : Integer);
       Entry terminar;
-   end;
+   end ascensor;
    task body ascensor is
       Piso_actual : Integer := 1;
-      Disponible : Boolean := true;
+      Disponible : Boolean := True;
    begin
       Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
       loop
-         accept pedir(desde : Integer; hasta : Integer) do
-            Disponible := false;
-            for I in 1 .. abs(Piso_actual - desde) loop
-               begin
-                  delay 1.0;
-               end;
-            end loop;
-            Piso_actual := desde;
-            Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
-            for I in 1 .. abs(Piso_actual - hasta) loop
-               begin
-                  delay 1.0;
-               end;
-            end loop;
-            Piso_actual := hasta;
-            Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
-            Disponible := true;
-         end;
-         accept terminar;
-         Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINO");
+         select
+            accept pedir(desde : Integer; hasta : Integer) do
+               Disponible := false;
+               Ascensores(numero).disponible := False;
+               for I in 1 .. abs(Piso_actual - desde) loop
+                  begin
+                     delay 1.0;
+                  end;
+               end loop;
+               Piso_actual := desde;
+               Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
+               for I in 1 .. abs(Piso_actual - hasta) loop
+                  begin
+                     delay 1.0;
+                  end;
+               end loop;
+               Piso_actual := hasta;
+               Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
+               Disponible := true;
+               Ascensores(numero).disponible := True;
+            end pedir;
+            or
+            accept terminar;
+            Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINO");
+            exit;
+         end select;
       end loop;
    end ascensor;
    
    type listaAscensores is array (Integer range <>) of ascensor;
-   Ascensores : listaAscensores(1 .. Cant_ascensores);
+   Ascensores2 : listaAscensores(1 .. Cant_ascensores);
    
    task type gestor is
    end;
    task body gestor is
-      ascensor1 : Integer := 1;
-      ascensor2 : Integer := 2;
+      Cola_EnEspera : listaPedidos(1 .. Cant_pedidos);
+      Cola_Atendidos : listaPedidos(1 .. Cant_pedidos);
    begin
-      if Ascensores(ascensor1).
+      llenarPedidos;
+      llenarAsc;
+      
+      for I in 1 .. Cant_pedidos loop
+         declare
+            Ascensor_disponible : Integer := 1;
+            Distancia_min : Integer := Cant_pisos;
+         begin
+            for J in 1 .. Cant_ascensores loop
+               if Ascensores(J).Disponible and abs(Ascensores(J).Piso_actual - Pedidos(I).desde) < Distancia_min
+               then
+                  Ascensor_disponible := J;
+                  Distancia_min := abs(Ascensores(J).Piso_actual - Pedidos(I).desde);
+               end if;
+            end loop;
+            
+            if Ascensores(Ascensor_Disponible).Disponible then
+               Ascensores2(Ascensor_Disponible).pedir(Pedidos(I).desde, Pedidos(I).hasta);
+               Cola_Atendidos(I) := Pedidos(I);
+            else
+               Cola_EnEspera(I) := Pedidos(I);
+            end if;
+         end;
+      end loop;
+   end gestor;
 
 begin
    delay 10.0;
    null;
 end ascensores;
-
-
