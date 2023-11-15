@@ -59,21 +59,43 @@ procedure ascensores is
    end;
    task body ascensor is
       Piso_actual : Integer := 1;
+      Disponible : Boolean := true;
    begin
-      Put_Line("El ascensor " & numero'Image & " esta en " & Image(Piso_actual));
+      Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
       loop
          accept pedir(desde : Integer; hasta : Integer) do
-            delay (abs(Piso_actual - desde));
+            Disponible := false;
+            for I in 1 .. abs(Piso_actual - desde) loop
+               begin
+                  delay 1.0;
+               end;
+            end loop;
             Piso_actual := desde;
-            Put_Line("El ascensor " & numero'Image & " esta en " & Image(Piso_actual));
-            delay (abs(Piso_actual - hasta));
+            Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
+            for I in 1 .. abs(Piso_actual - hasta) loop
+               begin
+                  delay 1.0;
+               end;
+            end loop;
             Piso_actual := hasta;
-            Put_Line("El ascensor " & numero'Image & " esta en " & Image(Piso_actual));
+            Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
+            Disponible := true;
          end;
          accept terminar;
+         Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINO");
       end loop;
-      Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINÃ.");
    end ascensor;
+   
+   type listaAscensores is array (Integer range <>) of ascensor;
+   Ascensores : listaAscensores(1 .. Cant_ascensores);
+   
+   task type gestor is
+   end;
+   task body gestor is
+      ascensor1 : Integer := 1;
+      ascensor2 : Integer := 2;
+   begin
+      if Ascensores(ascensor1).
 
 begin
    delay 10.0;
