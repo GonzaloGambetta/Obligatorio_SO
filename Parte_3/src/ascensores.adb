@@ -25,9 +25,9 @@ procedure ascensores is
    Pedidos : listaPedidos(1 .. Cant_pedidos);
 
    procedure llenarPedidos is
+      pedidoAux : pedido;
    begin
    for I in 1 .. Cant_pedidos loop
-      pedidoAux : pedido;
       begin
          Reset (Gen);
          pedidoAux.desde := Random(Gen);
@@ -60,19 +60,19 @@ procedure ascensores is
    task body ascensor is
       Piso_actual : Integer := 1;
    begin
-      Ada.Text_IO.Put_Line("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
+      Put_Line("El ascensor " & numero'Image & " esta en " & Image(Piso_actual));
       loop
-         accept pedir(desde : Integer, hasta : Integer) do
-            delay 1.0
+         accept pedir(desde : Integer; hasta : Integer) do
+            delay (abs(Piso_actual - desde));
             Piso_actual := desde;
-            Ada.Text_IO.Put_Line ("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
-            delay 1.0
+            Put_Line("El ascensor " & numero'Image & " esta en " & Image(Piso_actual));
+            delay (abs(Piso_actual - hasta));
             Piso_actual := hasta;
-            Ada.Text_IO.Put_Line ("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
+            Put_Line("El ascensor " & numero'Image & " esta en " & Image(Piso_actual));
          end;
          accept terminar;
-      end loop
-      Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINÓ.");
+      end loop;
+      Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINÃ.");
    end ascensor;
 
 begin
