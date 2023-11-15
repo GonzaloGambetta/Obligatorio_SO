@@ -10,9 +10,15 @@ procedure ascensores is
    Cant_pisos : integer := 10;
    Cant_pedidos : integer := 15;
 
+   subtype My_Range is Integer range 1 .. Cant_pisos;
+   package Random_Numbers is new Ada.Numerics.Discrete_Random (My_Range);
+   use Random_Numbers;
+   Gen : Generator;
+
    type pedido is record 
       desde : Integer;
       hasta : Integer;
+      atendido : Boolean := False;
    end record;
 
    type listaPedidos is array (Integer range <>) of pedido;
@@ -20,12 +26,16 @@ procedure ascensores is
 
    procedure llenarPedidos is
    begin
-      for I in 1 .. Cant_pedidos loop
-         pedidoAux : pedido;
-         begin
-            pedido1.desde := 1;
-         end;
-      end loop;
+   for I in 1 .. Cant_pedidos loop
+      pedidoAux : pedido;
+      begin
+         Reset (Gen);
+         pedidoAux.desde := Random(Gen);
+         Reset (Gen);
+         pedidoAux.hasta := Random(Gen);
+         Pedidos(I) := pedidoAux;	
+      end;
+   end loop;
    end llenarPedidos;
 
    package counter is
@@ -43,46 +53,31 @@ procedure ascensores is
     end get_next;
   end counter;
 
-   -- Hay filosofos numerados
-   task type filosofo (numero: integer:= 1+( counter.get_next mod Cant_de_filosofos) ) is
+   task type ascensor (numero: integer:= 1+(counter.get_next mod Cant_ascensores)) is
+      Entry pedir (desde : Integer; hasta : Integer);
+      Entry terminar;
    end;
-   task body filosofo is
-      id_tarea:Task_Id := Null_Task_Id;
-      primerpalito, segundopalito, temp : integer;
+   task body ascensor is
+      Piso_actual : Integer := 1;
    begin
-      id_tarea:= Current_Task;
-      Ada.Text_IO.Put_Line ("Soy el filosofo " & numero'Image & "  " & Image(id_tarea) );
-      primerpalito:=numero;
-      segundopalito:=((numero+1) mod Cant_de_filosofos);
-      if segundopalito<primerpalito then
-         temp:=segundopalito;
-         segundopalito:=primerpalito;
-         primerpalito:=temp;
-      end if;
-      for I in 1 .. Cant_Loops loop
+      Ada.Text_IO.Put_Line("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
+      loop
+         accept pedir(desde : Integer, hasta : Integer) do
+            delay 1.0
+            Piso_actual := desde;
+            Ada.Text_IO.Put_Line ("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
+            delay 1.0
+            Piso_actual := hasta;
+            Ada.Text_IO.Put_Line ("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
+         end;
+         accept terminar;
+      end loop
+      Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINÓ.");
+   end ascensor;
 
-      	Ada.Text_IO.Put_Line ("El fil�sofo "& numero'Image &" est� PENSANDO.");
-               MisPalitos(primerpalito).tomar(numero);
-               MisPalitos(segundopalito).tomar(numero);
-      	Ada.Text_IO.Put_Line ("El fil�sofo "& numero'Image &" est� COMIENDO.");
-               MisPalitos(segundopalito).liberar;
-               MisPalitos(primerpalito).liberar;
-      end loop;
-      Ada.Text_IO.Put_Line ("El fil�sofo "& numero'Image &" TERMINO.");
-   end filosofo;
-
-    --- array de filosofos
-    type Listafilosofos is array (Integer range <>) of filosofo;
-
-    -- Mis filosofos
-    Misfilosofos : Listafilosofos(1 .. Cant_de_Filosofos);
-
-
-
-
-begin  --   filosofos
-   delay 10.0; -- para esperar que todos terminen.
+begin
+   delay 10.0;
    null;
-end filosofos;
+end ascensores;
 
 
