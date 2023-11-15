@@ -37,26 +37,6 @@ procedure ascensores is
       end;
    end loop;
    end llenarPedidos;
-   
-   type asc is record 
-      disponible : Boolean;
-      piso_actual : Integer;
-   end record;
-      
-   type listaAsc is array (Integer range <>) of asc;
-   Ascensores : listaAsc(1 .. Cant_ascensores);
-
-   procedure llenarAsc is
-      ascAux : asc;
-   begin
-   for I in 1 .. Cant_ascensores loop
-      begin
-         ascAux.disponible := True;
-         ascAux.piso_actual := 1;
-         Ascensores(I) := ascAux;	
-      end;
-   end loop;
-   end llenarAsc;
 
    package counter is
       function get_next return integer;
@@ -75,7 +55,7 @@ procedure ascensores is
 
    task type ascensor (numero: integer:= 1+(counter.get_next mod Cant_ascensores)) is
       Entry pedir (desde : Integer; hasta : Integer);
-      Entry terminar;
+      Entry pisoActual (Piso_ascensor : OUT Integer);
    end ascensor;
    task body ascensor is
       Piso_actual : Integer := 1;
@@ -86,7 +66,6 @@ procedure ascensores is
          select
             accept pedir(desde : Integer; hasta : Integer) do
                Disponible := false;
-               Ascensores(numero).disponible := False;
                for I in 1 .. abs(Piso_actual - desde) loop
                   begin
                      delay 1.0;
@@ -102,52 +81,44 @@ procedure ascensores is
                Piso_actual := hasta;
                Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
                Disponible := true;
-               Ascensores(numero).disponible := True;
+               Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINO");
             end pedir;
-            or
-            accept terminar;
-            Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINO");
-            exit;
+         or
+            accept pisoActual (Piso_ascensor : OUT Integer) do
+               Put_Line("El ascensor ");
+               Piso_ascensor := Piso_actual;
+            end pisoActual;
          end select;
       end loop;
    end ascensor;
    
    type listaAscensores is array (Integer range <>) of ascensor;
-   Ascensores2 : listaAscensores(1 .. Cant_ascensores);
+   Ascensores : listaAscensores(1 .. Cant_ascensores);
    
-   task type gestor is
-   end;
+   task type gestor;
    task body gestor is
-      Cola_EnEspera : listaPedidos(1 .. Cant_pedidos);
-      Cola_Atendidos : listaPedidos(1 .. Cant_pedidos);
-   begin
-      llenarPedidos;
-      llenarAsc;
       
+   begin
       for I in 1 .. Cant_pedidos loop
          declare
-            Ascensor_disponible : Integer := 1;
+            Piso_ascensor : Integer;
             Distancia_min : Integer := Cant_pisos;
          begin
             for J in 1 .. Cant_ascensores loop
-               if Ascensores(J).Disponible and abs(Ascensores(J).Piso_actual - Pedidos(I).desde) < Distancia_min
+               Ascensores(J).pisoActual(Piso_ascensor);
+               Put_Line(Piso_ascensor'Image);
+               if abs(Piso_ascensor - Pedidos(I).desde) < Distancia_min
                then
-                  Ascensor_disponible := J;
-                  Distancia_min := abs(Ascensores(J).Piso_actual - Pedidos(I).desde);
+                  Distancia_min := abs(Piso_ascensor - Pedidos(I).desde);
+                  Ascensores(I).pedir(Pedidos(I).desde, Pedidos(I).hasta);
                end if;
             end loop;
-            
-            if Ascensores(Ascensor_Disponible).Disponible then
-               Ascensores2(Ascensor_Disponible).pedir(Pedidos(I).desde, Pedidos(I).hasta);
-               Cola_Atendidos(I) := Pedidos(I);
-            else
-               Cola_EnEspera(I) := Pedidos(I);
-            end if;
          end;
       end loop;
    end gestor;
 
 begin
+   llenarPedidos;
    delay 10.0;
    null;
 end ascensores;
