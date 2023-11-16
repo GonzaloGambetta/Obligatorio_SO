@@ -1,0 +1,22 @@
+[GENERATED OBJECT FILE]
+b__ascensores.o
+[PROJECT FILES]
+C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr
+20231114143454 ec6f5c0d6e5c4e64c47d7ea2dd67b139
+[BOUND OBJECT FILES]
+C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\obj\ascensores.o
+[GENERATED SOURCE FILES]
+b__ascensores.ads
+b__ascensores.adb
+b__ascensores.ali
+[RESULTING OPTIONS]
+-LC:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\obj\
+-LC:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\obj\
+-LC:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/
+-static
+-static-libgcc
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnarl.a
+C:/gnat/2021/lib/gcc/x86_64-w64-mingw32/10.3.1/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads
