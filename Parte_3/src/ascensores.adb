@@ -9,6 +9,8 @@ procedure ascensores is
    Cant_ascensores : Integer := 2;
    Cant_pisos : integer := 10;
    Cant_pedidos : integer := 15;
+   Piso_actual1 : Integer := 1;
+   Piso_actual2 : Integer := 1;
 
    subtype My_Range is Integer range 1 .. Cant_pisos;
    package Random_Numbers is new Ada.Numerics.Discrete_Random (My_Range);
@@ -52,18 +54,23 @@ procedure ascensores is
       return return_val;
     end get_next;
   end counter;
-
+   
    task type ascensor (numero: integer:= 1+(counter.get_next mod Cant_ascensores)) is
       Entry pedir (desde : Integer; hasta : Integer);
-      Entry pisoActual (Piso_ascensor : OUT Integer);
+      Entry liberar;
    end ascensor;
    task body ascensor is
       Piso_actual : Integer := 1;
       Disponible : Boolean := True;
    begin
+      if numero = 1
+      then
+         Piso_actual1 := Piso_actual;
+      else
+         Piso_actual2 := Piso_actual;
+      end if;
       Put_Line("El ascensor " & numero'Image & " esta en " & Piso_actual'Image);
       loop
-         select
             accept pedir(desde : Integer; hasta : Integer) do
                Disponible := false;
                for I in 1 .. abs(Piso_actual - desde) loop
@@ -83,29 +90,30 @@ procedure ascensores is
                Disponible := true;
                Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINO");
             end pedir;
-         or
-            accept pisoActual (Piso_ascensor : OUT Integer) do
-               Put_Line("El ascensor ");
-               Piso_ascensor := Piso_actual;
-            end pisoActual;
-         end select;
+            accept liberar;
+         
       end loop;
    end ascensor;
    
    type listaAscensores is array (Integer range <>) of ascensor;
    Ascensores : listaAscensores(1 .. Cant_ascensores);
    
-   task type gestor;
+   task type gestor is
+   end;
    task body gestor is
-      
+      Piso_ascensor : Integer;
+      Distancia_min : Integer := Cant_pisos;
    begin
+      Put_Line("El ascensor ");
       for I in 1 .. Cant_pedidos loop
-         declare
-            Piso_ascensor : Integer;
-            Distancia_min : Integer := Cant_pisos;
          begin
             for J in 1 .. Cant_ascensores loop
-               Ascensores(J).pisoActual(Piso_ascensor);
+               if J = 1
+               then
+                  Piso_ascensor := Piso_actual1;
+               else
+                  Piso_ascensor := Piso_actual2;
+               end if;
                Put_Line(Piso_ascensor'Image);
                if abs(Piso_ascensor - Pedidos(I).desde) < Distancia_min
                then
