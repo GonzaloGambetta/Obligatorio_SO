@@ -39,12 +39,12 @@ package body ada_main is
    E006 : Short_Integer; pragma Import (Ada, E006, "ada__calendar__delays_E");
    E152 : Short_Integer; pragma Import (Ada, E152, "ada__real_time_E");
    E107 : Short_Integer; pragma Import (Ada, E107, "ada__text_io_E");
-   E202 : Short_Integer; pragma Import (Ada, E202, "system__random_seed_E");
+   E206 : Short_Integer; pragma Import (Ada, E206, "system__random_seed_E");
    E182 : Short_Integer; pragma Import (Ada, E182, "system__tasking__initialization_E");
    E192 : Short_Integer; pragma Import (Ada, E192, "system__tasking__protected_objects_E");
    E194 : Short_Integer; pragma Import (Ada, E194, "system__tasking__protected_objects__entries_E");
    E190 : Short_Integer; pragma Import (Ada, E190, "system__tasking__queuing_E");
-   E210 : Short_Integer; pragma Import (Ada, E210, "system__tasking__stages_E");
+   E214 : Short_Integer; pragma Import (Ada, E214, "system__tasking__stages_E");
 
    Sec_Default_Sized_Stacks : array (1 .. 1) of aliased System.Secondary_Stack.SS_Stack (System.Parameters.Runtime_Default_Sec_Stack_Size);
 
@@ -276,7 +276,7 @@ package body ada_main is
       Ada.Text_Io'Elab_Body;
       E107 := E107 + 1;
       System.Random_Seed'Elab_Body;
-      E202 := E202 + 1;
+      E206 := E206 + 1;
       System.Tasking.Initialization'Elab_Body;
       E182 := E182 + 1;
       System.Tasking.Protected_Objects'Elab_Body;
@@ -286,7 +286,7 @@ package body ada_main is
       System.Tasking.Queuing'Elab_Body;
       E190 := E190 + 1;
       System.Tasking.Stages'Elab_Body;
-      E210 := E210 + 1;
+      E214 := E214 + 1;
    end adainit;
 
    procedure Ada_Main_Program;
