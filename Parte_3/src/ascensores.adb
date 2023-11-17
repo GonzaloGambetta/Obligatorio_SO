@@ -40,7 +40,6 @@ procedure ascensores is
          Pedidos(I) := pedidoAux;	
       end;
       end loop;
-   Put_Line("Termino");
    end llenarPedidos;
 
    package counter is
@@ -96,10 +95,10 @@ procedure ascensores is
             Piso_actual := hasta;
             Disponible := true;
             if numero = 1 then
-               Piso_actual1 := hasta;
+               Piso_actual1 := Piso_actual;
                Disponible1 := True;
             else
-               Piso_actual2 := hasta;
+               Piso_actual2 := Piso_actual;
                Disponible2 := True;
             end if;
             Disponible := true;
@@ -121,31 +120,28 @@ procedure ascensores is
    begin
       llenarPedidos;
       id_tarea:= Current_Task;
-      for I in 1 .. Cant_pedidos loop
          if Disponible1 and Disponible2 then
-            DistanciaA1 := abs(Piso_actual1 - Pedidos(I).desde);
-            DistanciaA2 := abs(Piso_actual2 - Pedidos(I).desde);
+            DistanciaA1 := abs(Piso_actual1 - Pedidos(numero).desde);
+            DistanciaA2 := abs(Piso_actual2 - Pedidos(numero).desde);
             if DistanciaA1 < DistanciaA2 then
-               Ascensores(1).pedir(Pedidos(I).desde, Pedidos(I).hasta);
+               Ascensores(1).pedir(Pedidos(numero).desde, Pedidos(numero).hasta);
                Ascensores(1).liberar;
             else
-               Ascensores(2).pedir(Pedidos(I).desde, Pedidos(I).hasta);
+               Ascensores(2).pedir(Pedidos(numero).desde, Pedidos(numero).hasta);
                Ascensores(2).liberar;
             end if;
          elsif Disponible1 then
-            Ascensores(1).pedir(Pedidos(I).desde, Pedidos(I).hasta);
+            Ascensores(1).pedir(Pedidos(numero).desde, Pedidos(numero).hasta);
             Ascensores(1).liberar;
          else
-            Ascensores(2).pedir(Pedidos(I).desde, Pedidos(I).hasta);
+            Ascensores(2).pedir(Pedidos(numero).desde, Pedidos(numero).hasta);
             Ascensores(2).liberar;
          end if;
-      end loop;
    end gestor;
    
    type listaGestores is array (Integer range <>) of gestor;
-   Gestorador : listaGestores(1 .. 1);
+   Gestiones : listaGestores(1 .. Cant_pedidos);
 
 begin
-   delay 10.0;
    null;
 end ascensores;
