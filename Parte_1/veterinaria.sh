@@ -347,14 +347,27 @@ actualizarStock(){
         cantAnterior=$(echo $lineaCod | cut -d',' -f5)
         sed -i "/$codigo/d" articulos.txt
         cantidad=$((cantidad + cantAnterior))
-        
         articulo=$categoria","$codigo","$nombre","$precio","$cantidad
         echo $articulo >> articulos.txt
     fi
 }
 
 ventaProductos() {
-   exit5=0
+    echo "Ingrese fecha y hora de la venta en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
+    read fechaHora
+    aux=0
+    while [ "$aux" -eq 0 ]
+    do
+        if ! [[ $fechaHora =~ ^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])T([01][0-9]|2[0-3]):[0-5][0-9]$ ]];
+        then
+            echo "La fecha y hora de la venta no es válida. Por favor, ingrese la fecha y hora en el formato ISO 8601 (YYYY-MM-DDTHH:MM)"
+            read fechaHora
+        else
+            aux=1
+        fi
+    done
+
+    exit5=0
     while [ $exit5 -ne -1 ]
     do
         echo "Seleccione la categoría del producto"
@@ -366,13 +379,27 @@ ventaProductos() {
         case $categoria in
             1) 
                 categoria="Medicamento"
-                exit5=-1
+                if grep -q "Medicamento" articulos.txt; then
+                    exit5=-1
+                else
+                    echo "No hay ningun medicamento"
+                fi
                 ;;
-            2) categoria="Suplementos"
-                exit5=-1
+            2) 
+                categoria="Suplementos"
+                if grep -q "Suplementos" articulos.txt; then
+                    exit5=-1
+                else
+                    echo "No hay ningun suplemento"
+                fi
                 ;;
-            3) categoria="Accesorios"
-                exit5=-1
+            3) 
+                categoria="Accesorios"
+                if grep -q "Accesorios" articulos.txt; then
+                    exit5=-1
+                else
+                    echo "No hay ningun accesorio"
+                fi
                 ;;
             
             *) echo "Seleccione una de las categorias presentadas"
@@ -415,26 +442,47 @@ ventaProductos() {
     if [ -n "$lineaProducto2" ]; then
         sed -i "${lineaProducto2}d" articulos.txt
     fi
-    echo $lineaProducto
-    echo "${categoriaProducto},${codigo},$(echo $lineaProducto | cut -d',' -f3-4),$cantidadNueva" >> articulos.txt   
+    echo "${categoriaProducto},${codigo},$(echo $lineaProducto | cut -d',' -f3-4),$cantidadNueva" >> articulos.txt  
+    precio=$(echo $lineaProducto | cut -d',' -f4)
+    precioTotal=$((precio * cantidad))
+    echo "$fechaHora,$codigo,$precioTotal" >> ventas.txt
 }
 
-informeMensual() {
+informeMensualCitas() {
     mes=""
     while [[ ! $mes =~ ^(0[1-9]|1[0-2])$ ]];
     do
-        echo "Ingrese un mes (01-12)"
+        echo "Ingrese un mes para informe de citas (01-12)"
         read mes
     done
 
     lineas=$(awk -F'-' -v mes="$mes" '$2 ~ mes' citas.txt)    
     if [ -z "$lineas" ]; then
         echo "No hay citas para el mes seleccionado."
-        return
+        informeMensualVentas;
+        return;
     fi
 
     promedio=$(echo "$lineas" | cut -d',' -f4 | awk '{total += $1; count++} END {print total/count}')
-    echo "El promedio recaudado para el mes $mes es $promedio"
+    echo "El promedio recaudado de citas para el mes $mes es $promedio"
+}
+
+informeMensualVentas(){
+    mes=""
+    while [[ ! $mes =~ ^(0[1-9]|1[0-2])$ ]];
+    do
+        echo "Ingrese un mes para informe de ventas (01-12)"
+        read mes
+    done
+
+    lineas=$(awk -F'-' -v mes="$mes" '$2 ~ mes' ventas.txt)    
+    if [ -z "$lineas" ]; then
+        echo "No hay ventas para el mes seleccionado."
+        return
+    fi
+
+    promedio=$(echo "$lineas" | cut -d',' -f3 | awk '{total += $1; count++} END {print total/count}')
+    echo "El promedio recaudado de ventas para el mes $mes es $promedio"
 }
 
 exit=0
@@ -464,11 +512,15 @@ do
             ;;
         4)
             echo "Venta de productos"  
-            ventaProductos          
+            if test -s articulos.txt; then
+                ventaProductos 
+            else
+                echo "No hay productos ingresados"
+            fi         
             ;;
         5) 
             echo "Informe mensual"    
-            informeMensual       
+            informeMensualCitas       
             ;;
         6)
             echo "Salir"
@@ -479,4 +531,3 @@ do
             ;;
     esac
 done
-

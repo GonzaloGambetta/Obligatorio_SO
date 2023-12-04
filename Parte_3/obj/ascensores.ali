@@ -21,10 +21,10 @@ RV NO_DEFAULT_INITIALIZATION
 RV NO_DYNAMIC_SIZED_OBJECTS
 RV NO_IMPLEMENTATION_PRAGMAS
 RV NO_IMPLICIT_LOOPS
-RV MAX_TASK_ENTRIES=2
+RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U ascensores%b		ascensores.adb		67a48a81 NE OO SU IL
+U ascensores%b		ascensores.adb		08113bf1 NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.command_line%s	a-comlin.adb		a-comlin.ali
@@ -70,7 +70,7 @@ D a-taside.ads		20210520051128 00e3a3f6 ada.task_identification%s
 D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D ascensores.adb	20231117211256 bc76a8b2 ascensores%b
+D ascensores.adb	20231203131722 d3c319c2 ascensores%b
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-c.ads		20210520051132 d9beded9 interfaces.c%s
 D i-cstrin.ads		20210520051132 341d0ddf interfaces.c.strings%s
@@ -119,83 +119,77 @@ D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
 G a e
 G c Z b b [ascensores standard 8 11 none]
 X 1 ada.ads
-16K9*Ada 20e8 22|1r6 2r6 2r23 3r6 3r31 4r6 5r6 6r6 6r35 18r34
+16K9*Ada 20e8 22|1r6 2r6 2r23 3r6 3r31 4r6 5r6 6r6 6r35 19r34
 X 4 a-comlin.ads
 36K13*Command_Line 144e21 22|4w10
 X 7 a-inteio.ads
 18K13*Integer_Text_IO[20|46] 22|3w10 3r35
 X 9 a-numeri.ads
-16K13*Numerics 35e17 22|1r10 18r38
+16K13*Numerics 35e17 22|1r10 19r38
 X 10 a-nudira.ads
-44k22*Discrete_Random 81e33 22|1w19 18r47
-50R9 Generator<43|65R9> 22|20r10[18]
-52V13 Random{integer} 22|37s29[18] 39s29[18]
-61U14 Reset<43|103p14> 22|36s10[18] 38s10[18]
+44k22*Discrete_Random 81e33 22|1w19 19r47
+50R9 Generator<43|65R9> 22|21r10[19]
+52V13 Random{integer} 22|37s29[19] 39s29[19]
+61U14 Reset<43|103p14> 22|36s10[19] 38s10[19]
 X 11 a-nudira.adb
-53V16 Random[43|86]{integer} 44|402b13[22|18]
-65V16 Random[43|86]{integer} 44|402b13[22|18]
+53V16 Random[43|86]{integer} 44|402b13[22|19]
+65V16 Random[43|86]{integer} 44|402b13[22|19]
 X 14 a-string.ads
 16K13*Strings 35e16 22|5w10
 X 18 a-taside.ads
 45K13*Task_Identification 104e28 22|6w10 6r39
-53P9*Task_Id<56|109P9> 22|65r16 117r16
-56p4*Null_Task_Id{53P9} 22|65r27 117r27
-65V13*Current_Task{53P9} 22|70s18 122s18
+53P9*Task_Id<56|109P9> 22|63r16
+56p4*Null_Task_Id{53P9} 22|63r27
+65V13*Current_Task{53P9} 22|68s18
 X 19 a-textio.ads
 58K13*Text_IO 725e16 22|2w10 2r27
-506U14*Put_Line 22|75s13 89s13 107s10
+506U14*Put_Line 22|72s13 82s13 94s13 133s4
 X 22 ascensores.adb
-8U11*ascensores 8b11 147l5 147t15
-9i4 Cant_ascensores{integer} 60r66 112r38
-10i4 Cant_pisos{integer} 17r43
-11i4 Cant_pedidos{integer} 29r32 34r18 114r64 143r35
-12i4 Piso_actual1{integer} 98m16 124r32
-13i4 Piso_actual2{integer} 101m16 125r32
-14b4 Disponible1{boolean} 78m16 99m16 123r13 133r16
-15b4 Disponible2{boolean} 80m16 102m16 123r29
-17I12 My_Range{integer} 18r64
-18K12 Random_Numbers[10|44] 19r8
-20r4 Gen{10|50R9[18]} 36r17 37r36 38r17 39r36
-22R9 pedido 26e14 28r53 32r19
-23i7 desde{integer} 37m20 124r63 125r63 127m52 130m52 134m49 137m49
-24i7 hasta{integer} 39m20 127m75 130m75 134m72 137m72
-25b7 atendido{boolean}
-28A9 listaPedidos(22R9)<integer> 29r14
-29a4 Pedidos{28A9} 40m10 124r47 125r47 127r36 127r59 130r36 130r59 134r33
-. 134r56 137r33 137r56
-31U14 llenarPedidos 31b14 43l8 43t21 121s7
-32r7 pedidoAux{22R9} 37m10 39m10 40r24
-34i8 I{integer} 40r18
-45K12 counter 48E7 49l8 49e15 50b17 58l8 58t15 60r45 114r43
-46V16 get_next{integer} 51b16 57l9 57t17 60s53 114s51
-48i7 data{integer} 54r24 55m10 55r18
-52i10 return_val{integer} 54m10 56r14
-60T14 ascensor 60d24 63e7 64b14 109l8 109t16 111r56
-60i24 numero{integer} 75r39 77r16 89r39 97r16 107r36
-61Y13 pedir 61>20 61>37 74b17 105t13 127s30 130s30 134s27 137s27
-61i20 desde{integer} 75r107 82r41 88r28
-61i37 hasta{integer} 89r107 90r45 95r28
-62Y13 liberar 106b17 128s30 131s30 135s27 138s27
-65p7 id_tarea{18|53P9} 70m7
-66i7 Piso_actual{integer} 71m7 75r78 82r27 88m13 89r78 90r31 95m13 98r32
-. 101r32
-67b7 Disponible{boolean} 72m7 76m13 96m13 104m13
-68i7 Demora{integer} 82m13 83r27
-74i23 desde{integer}
-74i40 hasta{integer}
-83i17 I{integer}
-90i17 I{integer}
-111A9 listaAscensores(60T14)<integer> 112r17
-112a4 Ascensores{111A9} 127r16 128r16 130r16 131r16 134r13 135r13 137r13
-. 138r13
-114T14 gestor 114d22 115e7 116b14 140l8 140t14 142r54
-114i22 numero{integer} 124r55 125r55 127r44 127r67 130r44 130r67 134r41 134r64
-. 137r41 137r64
-117p7 id_tarea{18|53P9} 122m7
-118i7 DistanciaA1{integer} 124m13 126r16
-119i7 DistanciaA2{integer} 125m13 126r30
-142A9 listaGestores(114T14)<integer> 143r16
-143a4 Gestiones{142A9}
+8U11*ascensores 8b11 135l5 135t15
+9i4 Cant_ascensores{integer} 59r66 100r38
+10i4 Cant_pisos{integer} 18r43
+11i4 Cant_pedidos{integer} 30r32 35r21 109r29
+12i4 Piso_actual1{integer} 89m16 111r32
+13i4 Piso_actual2{integer} 92m16 112r32
+14b4 Disponible1{boolean} 75m16 88m16 110r14 120r16
+15b4 Disponible2{boolean} 77m16 91m16 110r39 122r16
+16i4 Cont_pedidos{integer} 71m13 71r29 109r13 111r55 112r55 114r44 114r73
+. 115r44 115r73 117r44 117r73 118r44 118r73 121r41 121r70 123r41 123r70
+18I12 My_Range{integer} 19r64
+19K12 Random_Numbers[10|44] 20r8
+21r4 Gen{10|50R9[19]} 36r16 37r36 38r16 39r36
+23R9 pedido 27e14 29r53 33r19
+24i7 desde{integer} 37m20 111r69 112r69 114m58 115m58 117m58 118m58 121m55
+. 123m55
+25i7 hasta{integer} 39m20 114m87 115m87 117m87 118m87 121m84 123m84
+29A9 listaPedidos(23R9)<integer> 30r14
+30a4 Pedidos{29A9} 40m10 111r47 112r47 114r36 114r65 115r36 115r65 117r36
+. 117r65 118r36 118r65 121r33 121r62 123r33 123r62
+32U14 llenarPedidos 32b14 42l8 42t21 108s7
+33r7 pedidoAux{23R9} 37m10 39m10 40r24
+35i11 I{integer} 40r18
+44K12 counter 47E7 48l8 48e15 49b17 57l8 57t15 59r45
+45V16 get_next{integer} 50b16 56l9 56t17 59s53
+47i7 data{integer} 53r24 54m10 54r18
+51i10 return_val{integer} 53m10 55r14
+59T14 ascensor 59d24 61e7 62b14 97l8 97t16 99r56
+59i24 numero{integer} 72r39 74r16 82r39 87r16 94r39
+60Y13 pedir 60>20 60>37 70b17 95t13 114s30 115s30 117s30 118s30 121s27 123s27
+60i20 desde{integer} 72r107 79r41 81r28
+60i37 hasta{integer} 82r107 83r41 85r28
+63p7 id_tarea{18|53P9} 68m7
+64i7 Piso_actual{integer} 72r78 79r27 81m13 82r78 83r27 85m13 89r32 92r32
+65b7 Disponible{boolean} 73m13 75r31 77r31 86m13 88r31 91r31
+66i7 Demora{integer} 79m13 80r28 83m13 84r28
+70i23 desde{integer}
+70i40 hasta{integer}
+99A9 listaAscensores(59T14)<integer> 100r17
+100a4 Ascensores{99A9} 114r16 115r16 117r16 118r16 121r13 123r13
+102T14 gestor 103e7 104b14 126l8 126t14 128r54 129r15
+105i7 DistanciaA1{integer} 111m13 113r30
+106i7 DistanciaA2{integer} 112m13 113r16
+128A9 listaGestores(102T14)<integer>
+129t4 MiGestor{102T14}
 X 23 interfac.ads
 79M9*Unsigned_32
 82M9*Unsigned_64
