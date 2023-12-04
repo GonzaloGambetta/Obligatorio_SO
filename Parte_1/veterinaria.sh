@@ -337,7 +337,6 @@ actualizarStock(){
         read cantidad
     done
     
-
     if ! grep -qw "$codigo" articulos.txt
     then
         articulo=$categoria","$codigo","$nombre","$precio","$cantidad
@@ -428,6 +427,11 @@ ventaProductos() {
         
     echo "Ingrese cantidad a comprar del producto"
     read cantidad
+    while ! [[ "$cantidad" =~ ^[0-9]+(\.[0-9]+)?$ ]];
+    do
+        echo "Ingrese una cantidad válida"
+        read cantidad
+    done
 
     cantidadDisponible=$(echo $lineaProducto | cut -d',' -f5)
 
