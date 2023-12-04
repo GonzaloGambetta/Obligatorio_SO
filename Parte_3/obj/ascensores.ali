@@ -1,0 +1,210 @@
+V "GNAT Lib v2021"
+M P W=b
+A -gnatA
+A -mtune=generic
+A -march=x86-64
+P SS ZX
+
+RN
+RV NO_DELAY
+RV NO_DIRECT_BOOLEAN_OPERATORS
+RV NO_EXCEPTION_HANDLERS
+RV NO_EXCEPTIONS
+RV NO_FIXED_POINT
+RV NO_IO
+RV NO_RELATIVE_DELAY
+RV NO_SECONDARY_STACK
+RV NO_STANDARD_STORAGE_POOLS
+RV NO_TASK_HIERARCHY
+RV NO_TASKING
+RV NO_DEFAULT_INITIALIZATION
+RV NO_DYNAMIC_SIZED_OBJECTS
+RV NO_IMPLEMENTATION_PRAGMAS
+RV NO_IMPLICIT_LOOPS
+RV MAX_TASK_ENTRIES=2
+RV MAX_TASKS=1+
+
+U ascensores%b		ascensores.adb		67a48a81 NE OO SU IL
+W ada%s			ada.ads			ada.ali
+Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
+W ada.command_line%s	a-comlin.adb		a-comlin.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.numerics%s	a-numeri.ads		a-numeri.ali
+W ada.numerics.discrete_random%s
+Z ada.real_time%s	a-reatim.adb		a-reatim.ali
+W ada.strings%s		a-string.ads		a-string.ali
+Z ada.strings.text_buffers%s  a-sttebu.adb	a-sttebu.ali
+W ada.task_identification%s  a-taside.adb	a-taside.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W system%s		system.ads		system.ali
+Z system.concat_3%s	s-conca3.adb		s-conca3.ali
+Z system.concat_6%s	s-conca6.adb		s-conca6.ali
+Z system.img_int%s	s-imgint.ads		s-imgint.ali
+Z system.parameters%s	s-parame.adb		s-parame.ali
+Z system.random_numbers%s  s-rannum.adb		s-rannum.ali
+Z system.secondary_stack%s  s-secsta.adb	s-secsta.ali
+Z system.soft_links%s	s-soflin.adb		s-soflin.ali
+Z system.task_info%s	s-tasinf.adb		s-tasinf.ali
+Z system.tasking%s	s-taskin.adb		s-taskin.ali
+Z system.tasking.rendezvous%s  s-tasren.adb	s-tasren.ali
+Z system.tasking.stages%s  s-tassta.adb		s-tassta.ali
+
+D ada.ads		20210520051132 76789da1 ada%s
+D a-calend.ads		20210520051128 474d9720 ada.calendar%s
+D a-caldel.ads		20210520051128 9f20b83d ada.calendar.delays%s
+D a-comlin.ads		20210520051128 4aa66568 ada.command_line%s
+D a-except.ads		20210520051128 946f3014 ada.exceptions%s
+D a-finali.ads		20210520051128 bf4f806b ada.finalization%s
+D a-inteio.ads		20210520051128 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20210520051128 e4a01f64 ada.io_exceptions%s
+D a-numeri.ads		20210520051130 84bea7a3 ada.numerics%s
+D a-nudira.ads		20210520051130 5984dff3 ada.numerics.discrete_random%s
+D a-nudira.adb		20210520051130 0bfd6ec4 ada.numerics.discrete_random%b
+D a-reatim.ads		20210520051128 0240fc73 ada.real_time%s
+D a-stream.ads		20210520051130 119b8fb3 ada.streams%s
+D a-string.ads		20210520051130 90ac6797 ada.strings%s
+D a-sttebu.ads		20210520051130 18209c64 ada.strings.text_buffers%s
+D a-stuten.ads		20210520051130 808c40ad ada.strings.utf_encoding%s
+D a-tags.ads		20210520051130 9eaa38c6 ada.tags%s
+D a-taside.ads		20210520051128 00e3a3f6 ada.task_identification%s
+D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
+D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
+D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
+D ascensores.adb	20231117211256 bc76a8b2 ascensores%b
+D interfac.ads		20210520051132 edec285f interfaces%s
+D i-c.ads		20210520051132 d9beded9 interfaces.c%s
+D i-cstrin.ads		20210520051132 341d0ddf interfaces.c.strings%s
+D i-cstrea.ads		20210520051132 e53d8b8e interfaces.c_streams%s
+D system.ads		20210520051136 2ffa5114 system%s
+D s-atacco.ads		20210520051132 4c36d12f system.address_to_access_conversions%s
+D s-conca3.ads		20210520051132 0b705ca5 system.concat_3%s
+D s-conca6.ads		20210520051132 d2c72db2 system.concat_6%s
+D s-crtl.ads		20210520051132 0ebbdb71 system.crtl%s
+D s-exctab.ads		20210520051132 54135002 system.exception_table%s
+D s-ficobl.ads		20210520051132 078245e4 system.file_control_block%s
+D s-finroo.ads		20210520051132 4ff27390 system.finalization_root%s
+D s-imagei.ads		20210520051134 0d3f86a7 system.image_i%s
+D s-imageu.ads		20210520051134 525c30c6 system.image_u%s
+D s-imgint.ads		20210520051134 bdb6f5ec system.img_int%s
+D s-imguns.ads		20210520051134 0e4da2ac system.img_uns%s
+D s-multip.ads		20210520051134 38ac9f73 system.multiprocessors%s
+D s-osinte.ads		20210520051128 97504df8 system.os_interface%s
+D s-parame.ads		20210520051134 4752c4cb system.parameters%s
+D s-putima.ads		20210520051134 4e095881 system.put_images%s
+D s-rannum.ads		20210520051134 c3978523 system.random_numbers%s
+D s-rannum.adb		20210520051134 2631917b system.random_numbers%b
+D s-ransee.ads		20210520051134 01a57b33 system.random_seed%s
+D s-secsta.ads		20210520051134 9b3ab94b system.secondary_stack%s
+D s-soflin.ads		20210520051134 a7318a92 system.soft_links%s
+D s-stache.ads		20210520051134 a37c21ec system.stack_checking%s
+D s-stausa.ads		20210520051134 017a0a05 system.stack_usage%s
+D s-stalib.ads		20210520051134 472fbca8 system.standard_library%s
+D s-stoele.ads		20210520051134 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20210520051134 ed88f8fb system.storage_elements%b
+D s-tasinf.ads		20210520051128 601f6b72 system.task_info%s
+D s-taspri.ads		20210520051128 a1350802 system.task_primitives%s
+D s-taprop.ads		20210520051128 6eefbe12 system.task_primitives.operations%s
+D s-taskin.ads		20210520051128 88fba9ad system.tasking%s
+D s-taprob.ads		20210520051128 acd6094d system.tasking.protected_objects%s
+D s-tpoben.ads		20210520051128 60ad3dae system.tasking.protected_objects.entries%s
+D s-tasren.ads		20210520051128 a67a9949 system.tasking.rendezvous%s
+D s-tassta.ads		20210520051128 cca55c94 system.tasking.stages%s
+D s-traent.ads		20210520051134 26a8d361 system.traceback_entries%s
+D s-unstyp.ads		20210520051134 2b077493 system.unsigned_types%s
+D s-valuns.ads		20210520051134 dac7b45d system.val_uns%s
+D s-valueu.ads		20210520051134 7b8fccf5 system.value_u%s
+D s-wchcon.ads		20210520051136 1b7d22d2 system.wch_con%s
+D s-win32.ads		20210520051136 15ac53fb system.win32%s
+D unchconv.ads		20210520051136 ca2f9e18 unchecked_conversion%s
+G a e
+G c Z b b [ascensores standard 8 11 none]
+X 1 ada.ads
+16K9*Ada 20e8 22|1r6 2r6 2r23 3r6 3r31 4r6 5r6 6r6 6r35 18r34
+X 4 a-comlin.ads
+36K13*Command_Line 144e21 22|4w10
+X 7 a-inteio.ads
+18K13*Integer_Text_IO[20|46] 22|3w10 3r35
+X 9 a-numeri.ads
+16K13*Numerics 35e17 22|1r10 18r38
+X 10 a-nudira.ads
+44k22*Discrete_Random 81e33 22|1w19 18r47
+50R9 Generator<43|65R9> 22|20r10[18]
+52V13 Random{integer} 22|37s29[18] 39s29[18]
+61U14 Reset<43|103p14> 22|36s10[18] 38s10[18]
+X 11 a-nudira.adb
+53V16 Random[43|86]{integer} 44|402b13[22|18]
+65V16 Random[43|86]{integer} 44|402b13[22|18]
+X 14 a-string.ads
+16K13*Strings 35e16 22|5w10
+X 18 a-taside.ads
+45K13*Task_Identification 104e28 22|6w10 6r39
+53P9*Task_Id<56|109P9> 22|65r16 117r16
+56p4*Null_Task_Id{53P9} 22|65r27 117r27
+65V13*Current_Task{53P9} 22|70s18 122s18
+X 19 a-textio.ads
+58K13*Text_IO 725e16 22|2w10 2r27
+506U14*Put_Line 22|75s13 89s13 107s10
+X 22 ascensores.adb
+8U11*ascensores 8b11 147l5 147t15
+9i4 Cant_ascensores{integer} 60r66 112r38
+10i4 Cant_pisos{integer} 17r43
+11i4 Cant_pedidos{integer} 29r32 34r18 114r64 143r35
+12i4 Piso_actual1{integer} 98m16 124r32
+13i4 Piso_actual2{integer} 101m16 125r32
+14b4 Disponible1{boolean} 78m16 99m16 123r13 133r16
+15b4 Disponible2{boolean} 80m16 102m16 123r29
+17I12 My_Range{integer} 18r64
+18K12 Random_Numbers[10|44] 19r8
+20r4 Gen{10|50R9[18]} 36r17 37r36 38r17 39r36
+22R9 pedido 26e14 28r53 32r19
+23i7 desde{integer} 37m20 124r63 125r63 127m52 130m52 134m49 137m49
+24i7 hasta{integer} 39m20 127m75 130m75 134m72 137m72
+25b7 atendido{boolean}
+28A9 listaPedidos(22R9)<integer> 29r14
+29a4 Pedidos{28A9} 40m10 124r47 125r47 127r36 127r59 130r36 130r59 134r33
+. 134r56 137r33 137r56
+31U14 llenarPedidos 31b14 43l8 43t21 121s7
+32r7 pedidoAux{22R9} 37m10 39m10 40r24
+34i8 I{integer} 40r18
+45K12 counter 48E7 49l8 49e15 50b17 58l8 58t15 60r45 114r43
+46V16 get_next{integer} 51b16 57l9 57t17 60s53 114s51
+48i7 data{integer} 54r24 55m10 55r18
+52i10 return_val{integer} 54m10 56r14
+60T14 ascensor 60d24 63e7 64b14 109l8 109t16 111r56
+60i24 numero{integer} 75r39 77r16 89r39 97r16 107r36
+61Y13 pedir 61>20 61>37 74b17 105t13 127s30 130s30 134s27 137s27
+61i20 desde{integer} 75r107 82r41 88r28
+61i37 hasta{integer} 89r107 90r45 95r28
+62Y13 liberar 106b17 128s30 131s30 135s27 138s27
+65p7 id_tarea{18|53P9} 70m7
+66i7 Piso_actual{integer} 71m7 75r78 82r27 88m13 89r78 90r31 95m13 98r32
+. 101r32
+67b7 Disponible{boolean} 72m7 76m13 96m13 104m13
+68i7 Demora{integer} 82m13 83r27
+74i23 desde{integer}
+74i40 hasta{integer}
+83i17 I{integer}
+90i17 I{integer}
+111A9 listaAscensores(60T14)<integer> 112r17
+112a4 Ascensores{111A9} 127r16 128r16 130r16 131r16 134r13 135r13 137r13
+. 138r13
+114T14 gestor 114d22 115e7 116b14 140l8 140t14 142r54
+114i22 numero{integer} 124r55 125r55 127r44 127r67 130r44 130r67 134r41 134r64
+. 137r41 137r64
+117p7 id_tarea{18|53P9} 122m7
+118i7 DistanciaA1{integer} 124m13 126r16
+119i7 DistanciaA2{integer} 125m13 126r30
+142A9 listaGestores(114T14)<integer> 143r16
+143a4 Gestiones{142A9}
+X 23 interfac.ads
+79M9*Unsigned_32
+82M9*Unsigned_64
+X 43 s-rannum.ads
+77V13*Random{23|79M9} 44|224i21
+78V13*Random{23|82M9} 44|224i21
+X 49 s-stausa.ads
+208U14*Initialize 209i<c,__gnat_stack_usage_initialize>22
+273U14*Output_Results 277i<c,__gnat_stack_usage_output_results>22
+X 56 s-taskin.ads
+109P9*Task_Id(107R9)
+

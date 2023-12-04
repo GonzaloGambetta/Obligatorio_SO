@@ -1,9 +1,351 @@
 <?xml version="1.0"?>
 <Locations >
   <Project >
+<<<<<<< HEAD
     <file_marker current="true" column=" 1" line=" 1" >
       <vfs_project>C:\Users\Gast#195;#179;n\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Semestre 4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
       <vfs_file>C:\Users\Gast#195;#179;n\OneDrive - Facultad de Ingenieria - Universidad ORT Uruguay\Semestre 4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+=======
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\filosofos.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 99" >
+      <vfs_project />
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\filosofos.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 10" >
+      <vfs_project />
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\filosofos.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 65" line=" 30" >
+      <vfs_project />
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\filosofos.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project />
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 23" line=" 90" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 11" line=" 73" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 89" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 80" line=" 89" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 130" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 93" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 130" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 22" line=" 36" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 93" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 13" line=" 92" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 97" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 97" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 4" line=" 97" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 55" line=" 99" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 6" line=" 128" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 56" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 15" line=" 56" >
+      <vfs_project>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\ascensores.gpr</vfs_project>
+      <vfs_file>C:\Users\Usuario\OneDrive\Documentos\Semestre_4\Sistemas Operativos\Obligatorio_SO\Parte_3\src\ascensores.adb</vfs_file>
+>>>>>>> abb45d262f61ab3513af80779aa8a96d8fd9c548
     </file_marker>
   </Project>
 </Locations>
