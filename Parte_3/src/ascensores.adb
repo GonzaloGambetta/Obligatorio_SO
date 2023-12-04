@@ -62,16 +62,16 @@ procedure ascensores is
    begin
       Ada.Text_IO.Put_Line("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
       loop
-         accept pedir(desde : Integer, hasta : Integer) do
-            delay 1.0
+         accept pedir(desde : Integer; hasta : Integer) do
+            delay 1.0;
             Piso_actual := desde;
             Ada.Text_IO.Put_Line ("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
-            delay 1.0
+            delay 1.0;
             Piso_actual := hasta;
             Ada.Text_IO.Put_Line ("El ascensor " & numero'Image & " está en " & Image(Piso_actual));
          end;
          accept terminar;
-      end loop
+      end loop;|
       Ada.Text_IO.Put_Line ("El ascensor "& numero'Image &" TERMINÓ.");
    end ascensor;
 
