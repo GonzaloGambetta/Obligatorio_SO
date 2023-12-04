@@ -24,7 +24,7 @@ RV NO_IMPLICIT_LOOPS
 RV MAX_TASK_ENTRIES=1
 RV MAX_TASKS=1+
 
-U ascensores%b		ascensores.adb		08113bf1 NE OO SU IL
+U ascensores%b		ascensores.adb		23ccafcd NE OO SU IL
 W ada%s			ada.ads			ada.ali
 Z ada.calendar.delays%s	a-caldel.adb		a-caldel.ali
 W ada.command_line%s	a-comlin.adb		a-comlin.ali
@@ -70,7 +70,7 @@ D a-taside.ads		20210520051128 00e3a3f6 ada.task_identification%s
 D a-textio.ads		20210520051130 aef4d56d ada.text_io%s
 D a-tiinio.ads		20210520051130 390edddb ada.text_io.integer_io%s
 D a-unccon.ads		20210520051130 0e9b276f ada.unchecked_conversion%s
-D ascensores.adb	20231203131722 d3c319c2 ascensores%b
+D ascensores.adb	20231204174704 f81e8dfe ascensores%b
 D interfac.ads		20210520051132 edec285f interfaces%s
 D i-c.ads		20210520051132 d9beded9 interfaces.c%s
 D i-cstrin.ads		20210520051132 341d0ddf interfaces.c.strings%s
@@ -143,9 +143,9 @@ X 18 a-taside.ads
 65V13*Current_Task{53P9} 22|68s18
 X 19 a-textio.ads
 58K13*Text_IO 725e16 22|2w10 2r27
-506U14*Put_Line 22|72s13 82s13 94s13 133s4
+506U14*Put_Line 22|72s13 82s13 94s13
 X 22 ascensores.adb
-8U11*ascensores 8b11 135l5 135t15
+8U11*ascensores 8b11 133l5 133t15
 9i4 Cant_ascensores{integer} 59r66 100r38
 10i4 Cant_pisos{integer} 18r43
 11i4 Cant_pedidos{integer} 30r32 35r21 109r29
